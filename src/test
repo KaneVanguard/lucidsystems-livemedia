@@ -8,4 +8,4 @@ pyrcc4 -o usr/share/lucidsystems-greeter/resources_rc.py usr/share/lucidsystems-
 
 sudo cp -R usr /
 
-bbqlinux-greeter $1
+lucidsystems-greeter $1
