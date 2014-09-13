@@ -1,0 +1,22 @@
+#!/bin/bash
+
+LIVEUSER=lucid
+PASSWORD=$(perl -e 'print crypt($ARGV[0], "password")' $LIVEUSER)
+
+# Create group for automatic login
+groupadd -f autologin
+
+# Create the live user
+useradd -m -k /etc/skel -g users -G audio,games,installer,lp,autologin,optical,power,scanner,shutdown,storage,sudo,video -s /bin/bash -p $PASSWORD $LIVEUSER
+
+# Change finger information for the live user
+chfn -f "LucidSysytems Live User" $LIVEUSER
+
+# Copy skel folder to users home
+su -c "cp -r /etc/skel/.[a-zA-Z0-9]* /home/$LIVEUSER/" $LIVEUSER
+
+# Set default timezone
+ln -sf /usr/share/zoneinfo/UTC /etc/localtime
+
+exit 0
+

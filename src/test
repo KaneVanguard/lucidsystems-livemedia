@@ -1,0 +1,11 @@
+#!/bin/bash
+
+sudo rm -rf /usr/bin/lucidsystems-greeter
+sudo rm -rf /usr/lib/lucidsystems-greeter
+sudo rm -rf /usr/share/lucidsystems-greeter
+
+pyrcc4 -o usr/share/lucidsystems-greeter/resources_rc.py usr/share/lucidsystems-greeter/resources.qrc
+
+sudo cp -R usr /
+
+bbqlinux-greeter $1
