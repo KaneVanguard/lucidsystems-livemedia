@@ -1,7 +1,7 @@
 [Desktop Entry]
 Type=Application
-Exec=/usr/bin/bbqlinux-greeter
+Exec=/usr/bin/lucidsystems-greeter
 Hidden=false
 X-GNOME-Autostart-enabled=true
-Name=BBQLinux Greeter
+Name=LucidSystems Greeter
 Comment=
